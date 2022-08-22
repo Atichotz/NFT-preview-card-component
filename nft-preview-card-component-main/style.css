@@ -15,6 +15,7 @@
     box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
     font-size: 18px;
+    transition: 1s all ease;
 }
 .container{
     display: flex;
@@ -22,8 +23,10 @@
     align-items: center;
     height: 100vh;
     background-color: var(--Very-dark-blue-mainBG);
+    
 }
 .shadow-out{
+    animation: slideIn 1.5s ease;
     width: 21rem;
     height: 37rem;
     border-radius:0.7rem;
@@ -40,8 +43,6 @@
     border-radius:0.7rem;
     background-color: var(--Very-dark-blue-cardBG);
     /* border:1px solid blue; */
-    transform: scale(90%);
-
 }
 .card-header{
     overflow: hidden;
@@ -87,6 +88,7 @@
     justify-content: center;
 }
 .card-footer {
+    transition: 1s all ease;
     margin: 1.7rem 0 0 0;
     width: 100%;
     padding: 1.2rem 0 1.2rem 0;
@@ -112,4 +114,22 @@
 .card-footer span.creater{
     margin: 0 0 0 0.2rem;
     color: white;
+}
+@keyframes slideIn {
+    0%{
+        transform: scale(.5);
+        opacity: 0;
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@media only screen and (max-width:375px){
+.shadow-out{
+    transform: scale(0.7);
+}
 }
